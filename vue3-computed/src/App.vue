@@ -1,11 +1,25 @@
 <template>
-  <Fruits></Fruits>
+  <div>
+    <button @click="handler">click me!</button>
+    <h1 v-show="isShow">hello ~!</h1>
+  </div>
 </template>
+
 <script>
-import Fruits from '~/components/Fruits';
 export default {
-  components: {
-    Fruits,
+  data() {
+    return {
+      isShow: false,
+      count: 0,
+    };
+  },
+  methods: {
+    handler() {
+      this.isShow = !this.isShow;
+      this.count++;
+    },
   },
 };
 </script>
+
+<style></style>
